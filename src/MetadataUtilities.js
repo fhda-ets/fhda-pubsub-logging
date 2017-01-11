@@ -74,12 +74,18 @@ const defaultMapperNoColoring = defaultMapper(false);
  */
 function defaultMapper(coloring=true) {
     return function(value) {
+        // Validate the value
+        if(!(value)) return value;
+
+        // Does the object appear to be an error with a stack trace?
         if(value.stack) {
             return {
                 message: value.message || undefined,
                 stack: '\n' + Stacky.pretty(value.stack, (coloring) ? stackyDefault : stackyNoColoring)
             };
         }
+
+        // Else, return the value
         return value;   
     }; 
 }

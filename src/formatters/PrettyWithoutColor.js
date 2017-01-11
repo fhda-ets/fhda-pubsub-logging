@@ -42,7 +42,7 @@ const defaultTimeFormat = 'MM-DD-YYYY hh:mm:ss A';
 /**
  * Defaults for using Purdy to format objects
  */
-const purdyDefaults = { plain: true };
+const purdyDefaults = { plain: true, depth: 4 };
 
 /**
  * Format an event, typically into a final string, suitable to be rendered

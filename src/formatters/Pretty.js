@@ -94,7 +94,7 @@ function format(transportConfig, data) {
     // format specific property types such as errors
     if(data.metadata) {
         let processedMetadata = MetadataUtilities.process(data.metadata);
-        event += Purdy.stringify(processedMetadata);
+        event += Purdy.stringify(processedMetadata, { depth: 4 });
     }
 
     // Return formatted message
