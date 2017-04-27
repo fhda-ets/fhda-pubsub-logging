@@ -42,8 +42,11 @@ module.exports = function(transportConfig) {
     // Lookup formatter (defaults to PrettyWithoutColor)
     let formatter = GetFormatter(transportConfig.formatter, './PrettyWithoutColor');
 
-    // Create rotation file stream
+    // Generate filename
     let targetFilename = transportConfig.filename || `${Config.logging.source}.log`;
+    delete transportConfig.filename;
+
+    // Create rotation file stream
     let rotatingStream = RotatingFileStream(targetFilename, Object.assign({}, {
         // Sensible defaults
         compress: true,
