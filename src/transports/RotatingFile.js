@@ -44,6 +44,8 @@ module.exports = function(transportConfig) {
 
     // Generate filename
     let targetFilename = transportConfig.filename || `${Config.logging.source}.log`;
+
+    // Remove config properites not known to rotating-file-stream
     delete transportConfig.filename;
 
     // Create rotation file stream

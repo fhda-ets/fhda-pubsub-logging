@@ -43,7 +43,8 @@ module.exports = function(transportConfig) {
         let formattedMessage = formatter.format(transportConfig, data);
 
         // Write to stdout
-        process.stdout.write(`${formattedMessage}\n`);
+        // process.stdout.write(`${formattedMessage}\n`);
+        console.log(formattedMessage);
 
         // Return payload for transport chaining
         return data;
