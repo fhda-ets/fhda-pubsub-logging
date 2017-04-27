@@ -1,6 +1,6 @@
 {
   "name": "fhda-pubsub-logging",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Configurable application logging services built eventemitter3 for pubsub-style subscriptions and routing",
   "author": "Matt Rapczynski <rapczynskimatthew@fhda.edu",
   "license": "BSD-3-Clause",
@@ -17,7 +17,7 @@
     "hyperquest": "^2.1.2",
     "lodash": "^4.17.2",
     "purdy": "^2.2.0",
-    "rotating-file-stream": "^1.1.2",
+    "rotating-file-stream": "^1.2.2",
     "speed-date": "^1.0.0",
     "stacky": "^1.3.1"
   },

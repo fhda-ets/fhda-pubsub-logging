@@ -822,10 +822,6 @@ os-homedir@^1.0.0:
   version "1.0.2"
   resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
 
-os-tmpdir@~1.0.1:
-  version "1.0.2"
-  resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
-
 path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
@@ -938,11 +934,9 @@ rimraf@^2.2.8:
   dependencies:
     glob "^7.0.5"
 
-rotating-file-stream@^1.1.2:
-  version "1.1.2"
-  resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/rotating-file-stream/-/rotating-file-stream-1.1.2.tgz#c29163e063f3a03a0eb782bcaa3873c71708a1f9"
-  dependencies:
-    tmp "0.0.31"
+rotating-file-stream@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/rotating-file-stream/-/rotating-file-stream-1.2.2.tgz#292a5f07dc99b1fc4ff40ac6e8ccaea6e9961f6e"
 
 run-async@^0.1.0:
   version "0.1.0"
@@ -1101,12 +1095,6 @@ through2@~0.6.3:
 through@^2.3.6:
   version "2.3.8"
   resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
-
-tmp@0.0.31:
-  version "0.0.31"
-  resolved "http://sonatype.ad.fhda.edu/nexus/content/groups/fhda-npm/tmp/-/tmp-0.0.31.tgz#8f38ab9438e17315e5dbd8b3657e8bfb277ae4a7"
-  dependencies:
-    os-tmpdir "~1.0.1"
 
 to-iso-string@0.0.2:
   version "0.0.2"
