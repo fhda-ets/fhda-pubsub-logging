@@ -42,7 +42,8 @@ module.exports = function(transportConfig) {
     let httpRequestConfig = {
         headers: {
             'Authorization': `Splunk ${transportConfig.collectorAuthKey}`
-        }
+        },
+        timeout: 5000
     };
 
     return function(data) {
