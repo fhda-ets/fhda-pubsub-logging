@@ -31,6 +31,12 @@
 'use strict';
 let LogPublisher = require('./LogPublisher');
 
-module.exports = function(loggerName='*') {
+// Define factory function for getting/creating named loggers
+function loggerFactory(loggerName='*') {
     return LogPublisher.create(loggerName);
-};
+}
+
+// Decorate factory function with access to other package services
+loggerFactory['router'] = require('./EventRouter');
+
+module.exports = loggerFactory;
