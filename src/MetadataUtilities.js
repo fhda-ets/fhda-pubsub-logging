@@ -78,15 +78,11 @@ function defaultMapper(coloring=true) {
         // Validate the value
         if(!(value)) return value;
 
-        // Log the object
-        PackageDebug.log(`Checking object to see what formatting should be applied: ${value}`);
-
         // Does the object appear to be an error with a stack trace?
-        if(value.stack !== undefined) {
-            PackageDebug.log(`${value} appears to have a stack property (${value.stack})`);
+        if(value.stack !== undefined && typeof value.stack !== 'string') {
             return {
                 message: value.message || undefined,
-                stack: '\n' + Stacky.pretty(value.stack, (coloring) ? stackyDefault : stackyNoColoring)
+                stack: '\n' + safeStacky(value.stack, coloring)
             };
         }
 
@@ -106,6 +102,15 @@ function defaultMapper(coloring=true) {
  */
 function process(metadata, coloring=true) {
     return MapValues(metadata, (coloring) ? defaultMapperColoring : defaultMapperNoColoring);
+}
+
+function safeStacky(stack, coloring=true) {
+    try {
+        return Stacky.pretty(stack, (coloring) ? stackyDefault : stackyNoColoring);
+    }
+    catch(error) {
+        return stack;
+    }
 }
 
 module.exports = {
