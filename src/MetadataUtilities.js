@@ -30,6 +30,7 @@
 
 'use strict';
 let MapValues = require('lodash/mapValues');
+let PackageDebug = require('./PackageDebug');
 let Stacky = require('stacky');
 
 /**
@@ -77,8 +78,11 @@ function defaultMapper(coloring=true) {
         // Validate the value
         if(!(value)) return value;
 
+        // Log the object
+        PackageDebug.log(`Checking object to see what formatting should be applied: ${value}`);
+
         // Does the object appear to be an error with a stack trace?
-        if(value.stack) {
+        if(value.stack !== undefined) {
             return {
                 message: value.message || undefined,
                 stack: '\n' + Stacky.pretty(value.stack, (coloring) ? stackyDefault : stackyNoColoring)
