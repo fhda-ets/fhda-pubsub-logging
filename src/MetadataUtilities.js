@@ -83,6 +83,7 @@ function defaultMapper(coloring=true) {
 
         // Does the object appear to be an error with a stack trace?
         if(value.stack !== undefined) {
+            PackageDebug.log(`${value} appears to have a stack property (${value.stack})`);
             return {
                 message: value.message || undefined,
                 stack: '\n' + Stacky.pretty(value.stack, (coloring) ? stackyDefault : stackyNoColoring)
